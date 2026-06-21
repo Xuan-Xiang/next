@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from "react"
 
-
+// 客户端渲染
 export default function ClientPage() {
     const [list, setList] = useState([{
     "userId": 1,

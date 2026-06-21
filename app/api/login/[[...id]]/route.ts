@@ -1,16 +1,20 @@
 
 import { NextResponse, NextRequest } from 'next/server'
 
-export async function GET(request: NextRequest, { params }: { params: { id: string[] } }) {
-    // 动态参数根据第二个参数传入的对象获取，params.id是一个数组，包含了所有的动态参数
+export async function GET(
+    request: NextRequest,
+    { params }: { params: Promise<{ id?: string[] | undefined }> }
+) {
+    const resolvedParams = await params
 
-    console.log(await params)
+    // 动态参数根据第二个参数传入的对象获取，params.id是一个数组，包含了所有的动态参数
+    console.log(resolvedParams)
     // NextRequest NextResponse 本质上是对web api Request Response的封装，NextRequest继承自Request，NextResponse继承自Response
     console.log(request.headers)
     console.log(request.method)
     const body = await request.nextUrl.searchParams.get('aa')
     console.log(body)
-   
+
     return NextResponse.json({ message: 'Hello, World!' })
 }
 

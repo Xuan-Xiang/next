@@ -1,6 +1,15 @@
 
+import type { ReactNode } from 'react'
 
-export default function Layout({ children, home, about }: Record<string, React.ReactNode> ) {
+export default function Layout({
+    children,
+    home,
+    about,
+}: {
+    children: ReactNode
+    home: ReactNode
+    about: ReactNode
+}) {
     return (
         <div>
             <h1>home</h1>

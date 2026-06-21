@@ -1,5 +1,5 @@
 /**
- * @description: 平行路由
+ * @description: next组件， 静态组件、动态组件、缓存组件等
  * @returns 
  */
 

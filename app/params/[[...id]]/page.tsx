@@ -1,5 +1,7 @@
 // 'use client'
 
+import { Suspense } from "react"
+
 // import { useParams } from "next/navigation"
 
 
@@ -17,6 +19,7 @@ export default async function Page({ params }: { params: { id: string[] } }) {
     const { id } = await params
     console.log(id)
     return (
+
         <div>
             <h1>Page</h1>
             {/* <p>Params: {params.id.join('/')}</p> */}
